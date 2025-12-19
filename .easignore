@@ -1,0 +1,16 @@
+# Exclude common large/irrelevant folders to prevent upload errors
+node_modules/
+.expo/
+web-build/
+dist/
+
+# System specific
+AppData/
+.DS_Store
+*.pem
+*.jks
+*.keystore
+
+# Local config
+.env*
+eas-build-onboarding/

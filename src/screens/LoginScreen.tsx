@@ -77,6 +77,27 @@ const LoginScreen = ({ navigation }: any) => {
 
                 <Button
                     mode="outlined"
+                    onPress={async () => {
+                        try {
+                            setLoading(true);
+                            setError('');
+                            const { createUserWithEmailAndPassword } = await import('firebase/auth');
+                            await createUserWithEmailAndPassword(auth, email, password);
+                            // Auto-login happens automatically on success
+                        } catch (err: any) {
+                            setError(err.message);
+                        } finally {
+                            setLoading(false);
+                        }
+                    }}
+                    loading={loading}
+                    style={styles.button}
+                >
+                    Create Account
+                </Button>
+
+                <Button
+                    mode="text"
                     onPress={handleAnonymousLogin}
                     loading={loading}
                     style={styles.button}

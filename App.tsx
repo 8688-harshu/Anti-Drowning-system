@@ -45,6 +45,9 @@ export default function App() {
   return (
     <PaperProvider theme={paperTheme}>
       <NavigationContainer theme={navTheme}>
+        <View style={{ position: 'absolute', top: 30, right: 10, zIndex: 9999, backgroundColor: 'red', padding: 5, borderRadius: 5 }}>
+          <Text style={{ color: 'white', fontWeight: 'bold' }}>UPDATED v2</Text>
+        </View>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           {user ? (
             <>
